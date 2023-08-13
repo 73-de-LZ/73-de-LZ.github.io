@@ -1,1 +1,2 @@
-# 73-de-LZ.github.io
+# 73-de-LZ.github.io 
+OTA RDZ devLZ Update site
