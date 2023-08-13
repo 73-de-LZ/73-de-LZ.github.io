@@ -1353,13 +1353,13 @@ const masterInfo = document.getElementById('masterDiv');
 const develInfo = document.getElementById('develDiv');
 
 let request = new XMLHttpRequest();
-request.open('GET', 'http://lz4tu.freevar.com/master/update-info.html');
+request.open('GET', 'https://73-de-lz.github.io/master/update-info.html');
 request.onload = function() {
   masterInfo.innerHTML = request.response.replace(/<[^>]*>/g, '');
 }
 request.send();
 let drequest = new XMLHttpRequest();
-drequest.open('GET', 'http://lz4tu.freevar.com/devel/update-info.html');
+drequest.open('GET', 'https://73-de-lz.github.io/devel/update-info.html');
 drequest.onload = function() {
   develInfo.innerHTML= drequest.response.replace(/<[^>]*>/g, '');;
 }
