@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 19784
+livemap.js 20044
 try {
   var check = $(document);
 } catch (e) {
@@ -389,6 +389,7 @@ $(document).ready(function(){
 var reddot = '<span class="ldot rbg"></span>';
 var yellowdot = '<span class="ldot ybg"></span>';
 var greendot = '<span class="ldot gbg"></span>';
+var bluedot = '<span class="ldot bbg"></span>'; // Blue dot mod LZ4TU
 var lastframe = 0;
 
 $('#map .leaflet-control-container').append(L.DomUtil.create('div', 'leaflet-top leaflet-center leaflet-header'));
@@ -537,6 +538,10 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
         $('#status').html(greendot);
         stat = 1;
       } else {
+		   if (data.res > 1 ) {				// blue dot mod LZ4TU
+			 $('#status').html(bluedot);  	// blue dot mod LZ4TU
+			 stat = 0;						// blue dot mod LZ4TU
+		   } else {							// blue dot mod LZ4TU
         $('#status').html(yellowdot);
         stat = 0;
       }
@@ -936,7 +941,7 @@ function qrgTable() {
   footer();
 }
 
-style.css 7440
+style.css 7645
 body, html {
 	height: 100%;
 	margin: 0;
@@ -1219,6 +1224,12 @@ p{
 	background-image: linear-gradient(top, lime, green); 
 }
 .rbg { 
+	background-color: red;
+	background-image: -webkit-gradient(linear, left top, left bottom, from(orange), to(red));
+	background-image: linear-gradient(top, orange, red); 
+}
+/* Blue dot mod LZ4TU */
+.bbg { 
 	background-color: blue;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(cyan), to(blue));
 	background-image: linear-gradient(top, cyan, blue); 
