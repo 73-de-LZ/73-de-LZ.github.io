@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 19960
+livemap.js 20032
 try {
   var check = $(document);
 } catch (e) {
@@ -416,6 +416,9 @@ $('.leaflet-footer').append(footer);
 var statbar = '';
 headtxt = function(data,stat) {
   var staticon = (stat == '1')?greendot:yellowdot; 
+  if (stat == '2') {
+	   staticon = bluedot;  // Blue dot mod LZ4TU
+  }
   statbar = staticon + statbar;
   if ((statbar.length) > 10*greendot.length) { statbar = statbar.substring(0,10*greendot.length); }
   if (data.id && data.vframe != lastframe ) {
@@ -541,7 +544,7 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
       } else {
 		   if (data.res > 1) {
 			 $('#status').html(bluedot);
-			 stat = 0;
+			 stat = 2;
 		   } else {
         $('#status').html(yellowdot);
         stat = 0;
