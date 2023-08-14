@@ -1220,8 +1220,8 @@ p{
 }
 .rbg { 
 	background-color: blue;
-	background-image: -webkit-gradient(linear, left top, left bottom, from(lime), to(blue));
-	background-image: linear-gradient(top, lime, blue); 
+	background-image: -webkit-gradient(linear, left top, left bottom, from(cyan), to(blue));
+	background-image: linear-gradient(top, cyan, blue); 
 }
 
 #sonde_statbar .ldot {
