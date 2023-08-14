@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 20044
+livemap.js 19958
 try {
   var check = $(document);
 } catch (e) {
@@ -533,15 +533,16 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
         }
         
       }
-      if (data.res == 0) {
+// blue dot mod LZ4TU
+	  if (data.res == 0) {
         storage_write(data);
         $('#status').html(greendot);
         stat = 1;
       } else {
-		   if (data.res > 1 ) {				// blue dot mod LZ4TU
-			 $('#status').html(bluedot);  	// blue dot mod LZ4TU
-			 stat = 0;						// blue dot mod LZ4TU
-		   } else {							// blue dot mod LZ4TU
+		   if (data.res > 1) {
+			 $('#status').html(bluedot);
+			 stat = 0;
+		   } else {
         $('#status').html(yellowdot);
         stat = 0;
       }
