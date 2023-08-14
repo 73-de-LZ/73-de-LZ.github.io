@@ -562,7 +562,7 @@ function bearing(latlng1, latlng2) {
     bearing = bearing < 0 ? bearing-360 : bearing;
     return Math.round(bearing);
 }
-style.css 7439
+style.css 7441
 body, html {
 	height: 100%;
 	margin: 0;
@@ -840,9 +840,9 @@ p{
 	background-image: linear-gradient(top, yellow, orange);
 }
 .gbg {
-	background-color: blue;
+	background-color: green;
 	background-image: -webkit-gradient(linear, left top, left bottom, from(lime), to(green));
-	background-image: linear-gradient(top, lime, blue); 
+	background-image: linear-gradient(top, lime, green); 
 }
 .rbg { 
 	background-color: red;
