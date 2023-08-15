@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 20032
+livemap.js 20132
 try {
   var check = $(document);
 } catch (e) {
@@ -443,6 +443,7 @@ headtxt = function(data,stat) {
 };
 
 map.addControl(new L.Control.Button([ { position: 'topleft', text: '🔙', href: 'index.html' } ]));
+map.addControl(new L.Control.Button([ { position: 'topleft', text: 'S', href: 'control.html' } ]));
   
 L.control.zoom({ position:'topleft' }).addTo(map);
 
