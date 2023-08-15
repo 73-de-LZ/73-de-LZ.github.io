@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 21131
+livemap.js 20587
 try {
   var check = $(document);
 } catch (e) {
@@ -443,30 +443,8 @@ headtxt = function(data,stat) {
 };
 
 map.addControl(new L.Control.Button([ { position: 'topleft', text: '🔙', href: 'index.html' } ]));
-map.addControl(new L.Control.Button([ { position: 'topleft', text: 'S', href: 'control.html' } ]));
-map.addControl(new L.Control.Button([ { position: 'topleft', text: 'C', href: 'javascript:con_but();' } ]));
-/* Post to the provided URL with the specified parameters.
-function post(path, parameters) {
-    var form = $('<form></form>');
-
-    form.attr("method", "post");
-    form.attr("action", path);
-
-    $.each(parameters, function(key, value) {
-        var field = $('<input></input>');
-
-        field.attr("type", "hidden");
-        field.attr("name", key);
-        field.attr("value", value);
-
-        form.append(field);
-    });
-
-    // The form needs to be a part of the document in
-    // order for us to be able to submit it.
-    $(document.body).append(form);
-    form.submit();
-} */
+map.addControl(new L.Control.Button([ { position: 'topleft', text: 'C', href: 'control.html' } ]));  // LZ4TU
+map.addControl(new L.Control.Button([ { position: 'topleft', text: 'S', href: 'javascript:spectrum_key();' } ])); // LZ4TU
   
 L.control.zoom({ position:'topleft' }).addTo(map);
 
@@ -617,8 +595,8 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
       circ_gps.setRadius(gps_accuracy);
     }
   };
-  con_but = function() {
-	  alert('go to spectrum screen and post "spec"');
+  spectrum_key = function() {
+	  alert('go to spectrum screen >> post spec to control.html');
    // $.ajax({
     // type: "POST",
     // url: 'control.html',
