@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 20587
+livemap.js 20792
 try {
   var check = $(document);
 } catch (e) {
@@ -596,8 +596,17 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
     }
   };
   spectrum_key = function() {
-	  alert('go to spectrum screen >> post spec to control.html');
-   // $.ajax({
+     alert('go to spectrum screen >> post spec to control.html');
+     fetch('control.html', {
+    method: 'POST',
+    headers:{
+      'Content-Type': 'application/x-www-form-urlencoded'
+    },    
+    body: new URLSearchParams({
+        'name': 'spec',
+    })
+   });
+    // $.ajax({
     // type: "POST",
     // url: 'control.html',
     // data: "spec",
