@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 21062
+livemap.js 21094
 try {
   var check = $(document);
 } catch (e) {
@@ -618,6 +618,7 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
     }
   };
   con_but = function() {
+	  alert("I am an alert box!");
    $.ajax({
     type: "POST",
     url: 'control.html',
