@@ -319,7 +319,7 @@ livemap.html 946
   <div id="map"></div>
 <div class="livemb">
   <form  action="control.html" method="post"> 
-  <input type="button" name="rx" value="NextQRG_B1Short">
+  <input type="submit" name="rx" value="NextQRG_B1Short">
   <div class="spaceb"></div>
   <input type="submit" name="rx2" value="NextScreen_B2Short">
 </div>
