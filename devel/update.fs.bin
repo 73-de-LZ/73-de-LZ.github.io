@@ -298,13 +298,14 @@ document.getElementById("defaultTab").click();
 </body>
 </html>
 
-livemap.html 900
+livemap.html 999
 <!DOCTYPE html>
 <html>
 <head>
   <title>rdzTTGOSonde Server LiveMap</title>
   <meta charset="utf-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+
   <link rel="stylesheet" type="text/css" href="style.css" />
   <link rel="stylesheet" href="https://unpkg.com/leaflet@1.8.0/dist/leaflet.css" />
   <script>var mapcenter=[%MAPCENTER%];</script>
@@ -314,11 +315,13 @@ livemap.html 900
   <script src="livemap.js"></script>
 </head>
 <body>
+  <form  action="control.html" method="post"> <!-- class="wrapper" -->
+<!--  <div class="content">  -->
+  <input type="submit" name="spec" value="Spectrum">  <!-- class="ctlbtn" -->
+<!-- </div> -->
+   <input type="submit" name="reboot" value="Reboot">  <!-- class="ctlbtn" -->
   <div id="map"></div>
-  <form class="wrapper" action="control.html" method="post">
-  <div class="content">
-  <input class="ctlbtn" type="submit" name="spec" value="Spectrum (medium keypress)">
-  </div>
+
 </body>
 </html>
 livemap.js 20903
@@ -1114,7 +1117,7 @@ p{
   padding: 4px 30px;
   text-align: center;
   text-decoration: none;
-  display: block;
+  display: inline;
   margin: 2;
   font-size: 4vh;
 }
@@ -1124,7 +1127,7 @@ p{
 }
 
 #map {
-	height: 100%;
+	height: 80%;
 }
 
 .leaflet-popup-content table, .leaflet-popup-content table td {
