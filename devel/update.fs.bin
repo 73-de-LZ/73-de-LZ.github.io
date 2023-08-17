@@ -324,7 +324,7 @@ livemap.html 962
 </div>
 </body>
 </html>
-livemap.js 21101
+livemap.js 21681
 try {
   var check = $(document);
 } catch (e) {
@@ -450,8 +450,6 @@ headtxt = function(data,stat) {
 };
 
 map.addControl(new L.Control.Button([ { position: 'topleft', text: '🔙', href: 'index.html' } ]));
-map.addControl(new L.Control.Button([ { position: 'topleft', text: 'C', href: 'control.html' } ]));  // LZ4TU
-map.addControl(new L.Control.Button([ { position: 'topleft', text: 'S', href: 'javascript:spectrum_key();' } ])); // LZ4TU
   
 L.control.zoom({ position:'topleft' }).addTo(map);
 
@@ -468,8 +466,56 @@ map.addControl(new L.Control.Button([
 
 map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', href: 'javascript:show_settings();' } ]));
 
-  
-    
+/* LZ4TU mod live map scan, pause scan, stop scan, NextQRG mod begin*/
+map.addControl(new L.Control.Button([ { position: 'bottom', text: 'scan', href: 'javascript:button1_double();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottom', text: 'pause', href: 'javascript:button2_short();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottom', text: 'stop', href: 'javascript:button2_2shorts();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottom', text: 'next', href: 'javascript:button1_short();' } ]));
+  button1_double = function() {
+    fetch("control.html", {
+    method: "POST",
+    body: 'scan=Scanner (double keypress)',
+    headers: {
+        "Content-type": "application/x-www-form-urlencoded"
+    }
+    });
+  };
+  button2_short = function() {
+    fetch("control.html", {
+    method: "POST",
+    body: 'rx2=Button 2/next screen (short keypress)',
+    headers: {
+        "Content-type": "application/x-www-form-urlencoded"
+    }
+    });
+	fetch("control.html", {
+    method: "POST",
+    body: 'rx2=Button 2/next screen (short keypress)',
+    headers: {
+        "Content-type": "application/x-www-form-urlencoded"
+    }
+    });
+  };
+    button2_2shorts = function() {
+    fetch("control.html", {
+    method: "POST",
+    body: 'rx2=Button 2/next screen (short keypress)',
+    headers: {
+        "Content-type": "application/x-www-form-urlencoded"
+    }
+    });
+  };
+    button1_short = function() {
+    fetch("control.html", {
+    method: "POST",
+    body: 'rx=Receiver/next freq. (short keypress)',
+    headers: {
+        "Content-type": "application/x-www-form-urlencoded"
+    }
+    });
+  };
+/* LZ4TU mod end*/
+
   show = function(e,p) {
     if (p == 'landing') { get_predict(last_data); }
     if (e) {
@@ -601,36 +647,6 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
       circ_gps.slideTo(gps_location, { duration: 500 });
       circ_gps.setRadius(gps_accuracy);
     }
-  };
-/* LZ4TU mod live map */
-  spectrum_key = function() {
-//     alert('go to spectrum screen +> post spec to control.html');
-    fetch("control.html", {
-    method: "POST",
-    body: 'spec=Spectrum+(medium+keypress)',
-    headers: {
-        "Content-type": "application/x-www-form-urlencoded"
-    }
-    });
-// test1 ------------------------------------------------
-/*  fetch('control.html', {
-    method: 'POST',
-    headers:{
-      'Content-Type': 'application/x-www-form-urlencoded'
-    },    
-    body: new URLSearchParams({
-        'name': 'spec'
-    })
-   });
-  */
-// test2 ------------------------------------------------  
-/*  $.ajax({
-    type: "POST",
-    url: 'control.html',
-    data: "spec",	//    success: success,
-    dataType: "text"
-    }); */
-// end ------------------------------------------------------------------
   };
   get_data = function() {
       $('#status').html(reddot);
