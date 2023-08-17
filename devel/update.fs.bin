@@ -298,7 +298,7 @@ document.getElementById("defaultTab").click();
 </body>
 </html>
 
-livemap.html 962
+livemap.html 720
 <!DOCTYPE html>
 <html>
 <head>
@@ -315,16 +315,9 @@ livemap.html 962
 </head>
 <body>
   <div id="map"></div>
-<!-- /* LZ4TU mod live map */ -->
-<div class="livemb">
-  <form  action="control.html" method="post"> 
-  <input type="submit" name="rx" value="NextQRG">
-  <div class="spaceb"></div>
-  <input type="submit" name="rx2" value="NextScreen">
-</div>
 </body>
 </html>
-livemap.js 21697
+livemap.js 21694
 try {
   var check = $(document);
 } catch (e) {
@@ -453,12 +446,12 @@ map.addControl(new L.Control.Button([ { position: 'topleft', text: '🔙', href:
   
 L.control.zoom({ position:'topleft' }).addTo(map);
 
-map.addControl(new L.Control.Button([ { position: 'topleft', text: '🗺️', href: 'javascript:basemap_change();' } ]));
+map.addControl(new L.Control.Button([ { position: 'topleft', text: 'Map', href: 'javascript:basemap_change();' } ]));
 
 map.addControl(new L.Control.Button([ { position: 'topright', id: "status", text: '', href: 'javascript:get_data();' } ]));
 
 map.addControl(new L.Control.Button([
-  { position:'topright', text: '🎈', href: 'javascript:show(marker[last_id],\'marker\');' },
+  { position:'topright', text: 'pos', href: 'javascript:show(marker[last_id],\'marker\');' },
   { text: '〰️', href: 'javascript:show_line();' },
   { text: '💥', href: 'javascript:show(marker_burst[last_id],\'burst\');' },
   { text: '🎯', href: 'javascript:show(marker_landing[last_id],\'landing\');' }
@@ -467,10 +460,11 @@ map.addControl(new L.Control.Button([
 map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', href: 'javascript:show_settings();' } ]));
 
 /* LZ4TU mod live map scan, pause scan, stop scan, NextQRG mod begin*/
-map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'scan', href: 'javascript:button1_double();' } ]));
-map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'pause', href: 'javascript:button2_short();' } ]));
-map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'stop', href: 'javascript:button2_2shorts();' } ]));
-map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'next', href: 'javascript:button1_short();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'Scan', href: 'javascript:button1_double();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'CH+', href: 'javascript:button1_short();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomright', text: 'Pause', href: 'javascript:button2_short();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomright', text: 'Stop', href: 'javascript:button2_2shorts();' } ]));
+
   button1_double = function() {
     fetch("control.html", {
     method: "POST",
