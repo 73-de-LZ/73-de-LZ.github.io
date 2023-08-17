@@ -324,7 +324,7 @@ livemap.html 962
 </div>
 </body>
 </html>
-livemap.js 20924
+livemap.js 21101
 try {
   var check = $(document);
 } catch (e) {
@@ -604,9 +604,16 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
   };
 /* LZ4TU mod live map */
   spectrum_key = function() {
-     alert('go to spectrum screen +> post spec to control.html');
+//     alert('go to spectrum screen +> post spec to control.html');
+    fetch("control.html", {
+    method: "POST",
+    body: 'spec=Spectrum+(medium+keypress)',
+    headers: {
+        "Content-type": "application/x-www-form-urlencoded"
+    }
+    });
 // test1 ------------------------------------------------
-/*      fetch('control.html', {
+/*  fetch('control.html', {
     method: 'POST',
     headers:{
       'Content-Type': 'application/x-www-form-urlencoded'
@@ -617,7 +624,7 @@ map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', hre
    });
   */
 // test2 ------------------------------------------------  
-/*     $.ajax({
+/*  $.ajax({
     type: "POST",
     url: 'control.html',
     data: "spec",	//    success: success,
