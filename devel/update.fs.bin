@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 21694
+livemap.js 21689
 try {
   var check = $(document);
 } catch (e) {
@@ -460,11 +460,10 @@ map.addControl(new L.Control.Button([
 map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', href: 'javascript:show_settings();' } ]));
 
 /* LZ4TU mod live map scan, pause scan, stop scan, NextQRG mod begin*/
-map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'Scan', href: 'javascript:button1_double();' } ]));
 map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'CH+', href: 'javascript:button1_short();' } ]));
-map.addControl(new L.Control.Button([ { position: 'bottomright', text: 'Pause', href: 'javascript:button2_short();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'Scan', href: 'javascript:button1_double();' } ]));
 map.addControl(new L.Control.Button([ { position: 'bottomright', text: 'Stop', href: 'javascript:button2_2shorts();' } ]));
-
+map.addControl(new L.Control.Button([ { position: 'bottomright', text: 'Pause', href: 'javascript:button2_short();' } ]));
   button1_double = function() {
     fetch("control.html", {
     method: "POST",
@@ -627,7 +626,7 @@ map.addControl(new L.Control.Button([ { position: 'bottomright', text: 'Stop', h
     }
 
     if (!marker_gps) {
-      map.addControl(new L.Control.Button([{ position: 'topleft', text: '🛰️', href: 'javascript:show(marker_gps,\'gps\');' }]));
+      map.addControl(new L.Control.Button([{ position: 'topleft', text: 'GPS', href: 'javascript:show(marker_gps,\'gps\');' }]));
 
       marker_gps = L.marker(gps_location,{icon:icon_gps}).addTo(map)
       .bindPopup(poptxt('gps',e),{closeOnClick:false, autoPan:false});
