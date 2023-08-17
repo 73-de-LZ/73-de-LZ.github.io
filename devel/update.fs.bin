@@ -994,7 +994,7 @@ function qrgTable() {
   footer();
 }
 
-style.css 7855
+style.css 7645
 body, html {
 	height: 100%;
 	margin: 0;
@@ -1142,20 +1142,9 @@ p{
   margin: 0;
   display: block;
 }
-/* LZ4TU mod live map */
-.livemb {
-	background-color: #ccc;
-    padding: 6px 30px;
-}
-/* LZ4TU mod live map */
-.spaceb{
-	background-color: #ccc;
-  width: 20px;
-  display: inline-block;
-}
-/* LZ4TU mod live map */
+
 #map {
-	height: 95%;
+	height:100%;
 }
 
 
