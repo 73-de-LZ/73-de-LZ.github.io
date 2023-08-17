@@ -324,7 +324,7 @@ livemap.html 962
 </div>
 </body>
 </html>
-livemap.js 21681
+livemap.js 21697
 try {
   var check = $(document);
 } catch (e) {
@@ -467,10 +467,10 @@ map.addControl(new L.Control.Button([
 map.addControl(new L.Control.Button([ { position:'topright', text: '⚙️', href: 'javascript:show_settings();' } ]));
 
 /* LZ4TU mod live map scan, pause scan, stop scan, NextQRG mod begin*/
-map.addControl(new L.Control.Button([ { position: 'bottom', text: 'scan', href: 'javascript:button1_double();' } ]));
-map.addControl(new L.Control.Button([ { position: 'bottom', text: 'pause', href: 'javascript:button2_short();' } ]));
-map.addControl(new L.Control.Button([ { position: 'bottom', text: 'stop', href: 'javascript:button2_2shorts();' } ]));
-map.addControl(new L.Control.Button([ { position: 'bottom', text: 'next', href: 'javascript:button1_short();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'scan', href: 'javascript:button1_double();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'pause', href: 'javascript:button2_short();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'stop', href: 'javascript:button2_2shorts();' } ]));
+map.addControl(new L.Control.Button([ { position: 'bottomleft', text: 'next', href: 'javascript:button1_short();' } ]));
   button1_double = function() {
     fetch("control.html", {
     method: "POST",
