@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 21731
+livemap.js 21815
 try {
   var check = $(document);
 } catch (e) {
@@ -394,7 +394,7 @@ var lastframe = 0;
 
 $('#map .leaflet-control-container').append(L.DomUtil.create('div', 'leaflet-top leaflet-center leaflet-header'));
 var header = '';
-header += '<div id="sonde_main"><b>rdzTTGOSonde LiveMap</b><br />🎈 <b><span id="sonde_id"></span> - <span id="sonde_freq"></span> MHz - <span id="sonde_type"></span></b></div>';
+header += '<div id="sonde_main"><b>RDZ LiveMap -<span id="current_rssi"></span>dBm </b><br />🎈 <b><span id="sonde_id"></span> - <span id="sonde_freq"></span> MHz - <span id="sonde_type"></span></b></div>';
 header += '<div id="sonde_detail"><span id="sonde_alt"></span>m | <span id="sonde_climb"></span>m/s | <span id="sonde_speed"></span>km/h | <span id="sonde_dir"></span>°<br /><span id="sonde_time"></span> | -<span id="sonde_rssi"></span>dBm</div>';
 header += '<div id="sonde_status"><span id="sonde_statbar"></span></div>';
 header += '<div id="settings"><br /><b>Prediction-Settings</b><br />';
@@ -421,6 +421,7 @@ headtxt = function(data,stat) {
   }
   statbar = staticon + statbar;
   if ((statbar.length) > 10*greendot.length) { statbar = statbar.substring(0,10*greendot.length); }
+  $('#current_rssi').html(data.rssi / 2 ); // mod LZ4TU
   if (data.id && data.vframe != lastframe ) {
     lastframe = data.vframe;
     $('#sonde_id').html(data.id);
