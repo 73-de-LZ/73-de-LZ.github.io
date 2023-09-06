@@ -317,7 +317,7 @@ livemap.html 720
   <div id="map"></div>
 </body>
 </html>
-livemap.js 21927
+livemap.js 22033
 try {
   var check = $(document);
 } catch (e) {
@@ -394,7 +394,7 @@ var lastframe = 0;
 
 $('#map .leaflet-control-container').append(L.DomUtil.create('div', 'leaflet-top leaflet-center leaflet-header'));
 var header = '';  // next line mod LZ4TU
-header += '<div id="sonde_main"><b>RDZ LiveMap | AFC <span id="current_afc"></span> | -<span id="current_rssi"></span>dBm </b><br />🎈 <b><span id="sonde_id"></span> - <span id="sonde_freq"></span> MHz - <span id="sonde_type"></span></b></div>';
+header += '<div id="sonde_main"><table><tr><td><b>RDZ LiveMap </b></td><td><b> AFC <span id="current_afc"></span></b></td><td><b> -<span id="current_rssi"></span>dBm </b></td></tr><tr><td>🎈 <b><span id="sonde_id"></span></b></td><td><b> - <span id="sonde_freq"></span> MHz - </b></td><td><b><span id="sonde_type"></span></b></td></tr></table></div>';
 header += '<div id="sonde_detail"><span id="sonde_alt"></span>m | <span id="sonde_climb"></span>m/s | <span id="sonde_speed"></span>km/h | <span id="sonde_dir"></span>°<br /><span id="sonde_time"></span> | -<span id="sonde_rssi"></span>dBm</div>';
 header += '<div id="sonde_status"><span id="sonde_statbar"></span></div>';
 header += '<div id="settings"><br /><b>Prediction-Settings</b><br />';
