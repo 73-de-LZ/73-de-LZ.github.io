@@ -968,7 +968,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <body>
 </body>
 </html>
-moni.js 14259
+moni.js 14258
 document.addEventListener('DOMContentLoaded', function() {
     // Array to store telemetry data and local time
     let telemetryDataArray = [];
@@ -1183,14 +1183,14 @@ document.addEventListener('DOMContentLoaded', function() {
                         label: 'RH Int.',
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[4])),
                         yAxisID: 'y1',
-                        borderColor: 'brown',
+                        borderColor: 'green',
                         fill: false
                     },
                     {
                         label: 'RH Ext.',
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[5])),
                         yAxisID: 'y1',
-                        borderColor: 'green',
+                        borderColor: 'blue',
                         fill: false
                     },
                     {
