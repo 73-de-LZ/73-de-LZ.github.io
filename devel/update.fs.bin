@@ -968,7 +968,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <body>
 </body>
 </html>
-moni.js 15314
+moni.js 15513
 // devLZ20240428 by LZ4TU and ChatGPT
 document.addEventListener('DOMContentLoaded', function() {
     // Array to store telemetry data and local time
@@ -1225,6 +1225,12 @@ document.addEventListener('DOMContentLoaded', function() {
                 ]
             },
             options: {
+                responsive: true,
+                interaction: {
+                    mode: 'index',
+                    intersect: false,
+                },
+                stacked: false,				
                 scales: {
                     y: {
                         type: 'linear',
