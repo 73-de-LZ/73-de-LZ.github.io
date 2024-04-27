@@ -968,7 +968,8 @@ document.addEventListener("DOMContentLoaded", function(){
 <body>
 </body>
 </html>
-moni.js 14258
+moni.js 14420
+// devLZ20240428 by LZ4TU and ChatGPT
 document.addEventListener('DOMContentLoaded', function() {
     // Array to store telemetry data and local time
     let telemetryDataArray = [];
@@ -1247,7 +1248,7 @@ document.addEventListener('DOMContentLoaded', function() {
                             text: 'RPM'
                         },
                         ticks: {
-                            display: false // Hide tick labels for RPM/100 axis
+                            display: false // Hide tick labels for RPM axis
                         }
                     }
                 }
@@ -1262,15 +1263,17 @@ document.addEventListener('DOMContentLoaded', function() {
     setInterval(fetchAndUpdateTelemetry, 5000);
 
     // Function to convert telemetry data array to CSV format
-    function convertToCSV() {
-        const csvRows = [];
-        const headers = ["U_batt [V]", "I_batt [A]", "t_int [°C]", "t_ext [°C]", "RH_int [%]", "RH_ext [%]", "RPM", "Time"];
-        csvRows.push(headers.join(',')); // Add headers as the first row
-        telemetryDataArray.forEach(data => {
-            csvRows.push(data.split(' ').join(',')); // Convert each telemetry data entry to CSV format and add to rows
-        });
-        return csvRows.join('\n'); // Join rows with newline characters
-    }
+	function convertToCSV() {
+	  const csvRows = [];
+	  const headers = ["Time", "U_batt [V]", "I_batt [A]", "t_int [°C]", "t_ext [°C]", "RH_int [%]", "RH_ext [%]", "RPM"];
+	  csvRows.push(headers.join(',')); // Add headers as the first row
+	  telemetryDataArray.forEach((data, index) => {
+		const rowData = data.split(' ').join(','); // Convert each telemetry data entry to CSV format
+		const time = timerArray[index]; // Get the corresponding time from timerArray
+		csvRows.push(`${time},${rowData}`); // Prepend the time to the telemetry data and add to rows
+	  });
+	  return csvRows.join('\n'); // Join rows with newline characters
+	}
 
 	// Function to generate the file name with current date and time
 	function generateFileName() {
