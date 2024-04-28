@@ -1198,7 +1198,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         yAxisID: 'y1',
                         borderColor: 'green',
                         borderWidth: 2,
-						borderDash: [2, 2],
+						borderDash: [3, 5],
                         radius: 0,
                         tension: 0.15,						
                         fill: false
@@ -1209,7 +1209,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         yAxisID: 'y1',
                         borderColor: 'blue',
                         borderWidth: 2,
-                        borderDash: [2, 2],						
+                        borderDash: [3, 5],						
                         radius: 0,
                         tension: 0.15,						
                         fill: false
