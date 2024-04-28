@@ -968,7 +968,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <body>
 </body>
 </html>
-moni.js 15516
+moni.js 15594
 // devLZ20240428 by LZ4TU and ChatGPT
 document.addEventListener('DOMContentLoaded', function() {
     // Array to store telemetry data and local time
@@ -1198,6 +1198,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         yAxisID: 'y1',
                         borderColor: 'green',
                         borderWidth: 2,
+						borderDash: [2, 2],
                         radius: 0,
                         tension: 0.15,						
                         fill: false
@@ -1208,6 +1209,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         yAxisID: 'y1',
                         borderColor: 'blue',
                         borderWidth: 2,
+                        borderDash: [2, 2],						
                         radius: 0,
                         tension: 0.15,						
                         fill: false
