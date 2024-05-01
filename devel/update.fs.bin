@@ -968,7 +968,7 @@ document.addEventListener("DOMContentLoaded", function(){
 <body>
 </body>
 </html>
-moni.js 15612
+moni.js 15863
 // devLZ20240428 by LZ4TU and ChatGPT
 document.addEventListener('DOMContentLoaded', function() {
     // Array to store telemetry data and local time
@@ -1099,6 +1099,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[0])),
                         yAxisID: 'y',
                         borderColor: 'orange',
+						backgroundColor: '#FFBB33',
                         borderWidth: 2,
                         radius: 0,
                         tension: 0.15,
@@ -1109,6 +1110,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[1])),
                         yAxisID: 'y1',
                         borderColor: 'cyan',
+						backgroundColor: '#33FFFF', 
                         borderWidth: 2,
                         radius: 0,
                         tension: 0.15,						
@@ -1178,6 +1180,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[2])),
                         yAxisID: 'y',
                         borderColor: 'red',
+						backgroundColor: '#FF3030',
                         borderWidth: 2,
                         radius: 0,
                         tension: 0.15,						
@@ -1187,6 +1190,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         label: 't Ext.',
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[3])),
                         borderColor: 'yellow',
+						backgroundColor: '#FFFF30',
                         borderWidth: 2,
                         radius: 0,
                         tension: 0.15,						
@@ -1197,6 +1201,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[4])),
                         yAxisID: 'y1',
                         borderColor: 'green',
+						backgroundColor: 'darkgreen',
                         borderWidth: 2,
                         borderDash: [3, 5],
                         radius: 0,
@@ -1208,6 +1213,7 @@ document.addEventListener('DOMContentLoaded', function() {
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[5])),
                         yAxisID: 'y1',
                         borderColor: 'blue',
+						backgroundColor: 'mediumblue',
                         borderWidth: 2,
                         borderDash: [3, 5],						
                         radius: 0,
@@ -1218,7 +1224,8 @@ document.addEventListener('DOMContentLoaded', function() {
                         label: 'RPM',
                         data: telemetryDataArray.map(data => parseFloat(data.split(" ")[6])),
                         yAxisID: 'y2',
-                        borderColor: 'grey',
+                        borderColor: 'teal',
+						backgroundColor: '#005050',
                         borderWidth: 1,
                         radius: 0,
                         tension: 0,						
