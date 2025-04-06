@@ -248,7 +248,7 @@ function configTable() {
   }
   acc[0].click();
 }
-index.html 6174
+index.html 6320
 <!DOCTYPE html>
 <html>
 <head>
@@ -268,8 +268,8 @@ index.html 6174
 	<a href="#ctrl" onclick="selTab(event,'Control')" class="tablinks">Control</a>
 	<a href="#config" onclick="selTab(event,'Config')" class="tablinks">Config</a>
 	<a href="#wifi" onclick="selTab(event,'WiFi')" class="tablinks">WiFi</a>
-	<!-- LZ4TU-5 telemetry mod: Added link to Monitor in topnav bar -->
-	<a href="#monitor" onclick="document.location.href='monitor.html'" class="tablinks">Monitor</a>
+	<!-- LZ4TU-5 telemetry mod: Added Monitor in topnav bar -->
+	<a href="#monitor" onclick="selTab(event,'Monitor')" class="tablinks">Monitor</a>
 	<a href="javascript:void(0);" class="icon" onclick="myFunction()">
 		<span class="hamburger"></span>
 	</a>
@@ -335,6 +335,10 @@ index.html 6174
 
 <div id="Control" class="tabcontent" data-src="control.html">
 	<iframe class="tci" src="" ></iframe>
+</div>
+<!-- LZ4TU-5 telemetry mod: Added Monitor in topnav bar -->
+<div id="Monitor" class="tabcontent" data-src="monitor.html">
+  <iframe class="tci" src=""></iframe>
 </div>
 </div>
 <script>
@@ -1718,7 +1722,7 @@ sdfiles.html 2549
 </html>
 
 sha256.min.js 849
-var sha256=function a(b){function c(a,b){return a>>>b|a<<32-b}for(var d,e,f=Math.pow,g=f(2,32),h="length",i="",j=[],k=8*b[h],l=a.h=a.h||[],m=a.k=a.k||[],n=m[h],o={},p=2;64>n;p++)if(!o[p]){for(d=0;313>d;d+=p)o[d]=p;l[n]=f(p,.5)*g|0,m[n++]=f(p,1/3)*g|0}for(b+="\x80";b[h]%64-56;)b+="\x00";for(d=0;d<b[h];d++){if(e=b.charCodeAt(d),e>>8)return;j[d>>2]|=e<<(3-d)%4*8}for(j[j[h]]=k/g|0,j[j[h]]=k,e=0;e<j[h];){var q=j.slice(e,e+=16),r=l;for(l=l.slice(0,8),d=0;64>d;d++){var s=q[d-15],t=q[d-2],u=l[0],v=l[4],w=l[7]+(c(v,6)^c(v,11)^c(v,25))+(v&l[5]^~v&l[6])+m[d]+(q[d]=16>d?q[d]:q[d-16]+(c(s,7)^c(s,18)^s>>>3)+q[d-7]+(c(t,17)^c(t,19)^t>>>10)|0),x=(c(u,2)^c(u,13)^c(u,22))+(u&l[1]^u&l[2]^l[1]&l[2]);l=[w+x|0].concat(l),l[4]=l[4]+w|0}for(d=0;8>d;d++)l[d]=l[d]+r[d]|0}for(d=0;8>d;d++)for(e=3;e+1;e--){var y=l[d]>>8*e&255;i+=(16>y?0:"")+y.toString(16)}return i};style.css 9416
+var sha256=function a(b){function c(a,b){return a>>>b|a<<32-b}for(var d,e,f=Math.pow,g=f(2,32),h="length",i="",j=[],k=8*b[h],l=a.h=a.h||[],m=a.k=a.k||[],n=m[h],o={},p=2;64>n;p++)if(!o[p]){for(d=0;313>d;d+=p)o[d]=p;l[n]=f(p,.5)*g|0,m[n++]=f(p,1/3)*g|0}for(b+="\x80";b[h]%64-56;)b+="\x00";for(d=0;d<b[h];d++){if(e=b.charCodeAt(d),e>>8)return;j[d>>2]|=e<<(3-d)%4*8}for(j[j[h]]=k/g|0,j[j[h]]=k,e=0;e<j[h];){var q=j.slice(e,e+=16),r=l;for(l=l.slice(0,8),d=0;64>d;d++){var s=q[d-15],t=q[d-2],u=l[0],v=l[4],w=l[7]+(c(v,6)^c(v,11)^c(v,25))+(v&l[5]^~v&l[6])+m[d]+(q[d]=16>d?q[d]:q[d-16]+(c(s,7)^c(s,18)^s>>>3)+q[d-7]+(c(t,17)^c(t,19)^t>>>10)|0),x=(c(u,2)^c(u,13)^c(u,22))+(u&l[1]^u&l[2]^l[1]&l[2]);l=[w+x|0].concat(l),l[4]=l[4]+w|0}for(d=0;8>d;d++)l[d]=l[d]+r[d]|0}for(d=0;8>d;d++)for(e=3;e+1;e--){var y=l[d]>>8*e&255;i+=(16>y?0:"")+y.toString(16)}return i};style.css 9414
 body, html {
 	height: 100%;
 	margin: 0;
@@ -2042,7 +2046,7 @@ h1{
 	display:none;
 }
 
-/* LZ4TU Corrected Button States */
+/* LZ4TU Colored Button States */
 .leaflet-bar a:hover {
   background-color: #4cffa8 !important;
 }
@@ -2142,7 +2146,7 @@ h1{
 }
 
 /* When the screen is less than 600 pixels wide, hide all links, except for the first one ("Home"). Show the link that contains should open and close the topnav (.icon) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .topnav a:not(.active) {display: none;}
   .topnav a.icon {
     float: right;
@@ -2151,7 +2155,7 @@ h1{
 }
 
 /* The "responsive" class is added to the topnav with JavaScript when the user clicks on the icon. This class makes the topnav look good on small screens (display the links vertically instead of horizontally) */
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 640px) {
   .topnav.responsive {position: relative;}
   .topnav.responsive a.icon {
     position: absolute;
